@@ -1,0 +1,62 @@
+{
+  "name": "ui",
+  "homepage": ".",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
+    "@kiyasov/noty": "^1.1.4",
+    "@material-ui/core": "^4.9.1",
+    "@material-ui/icons": "^4.9.1",
+    "animate.css": "^3.7.2",
+    "autosize": "^4.0.2",
+    "jquery": "^3.4.1",
+    "material-icons-react": "^1.0.4",
+    "material-table": "^1.56.1",
+    "noty": "^3.2.0-beta",
+    "react": "^16.11.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-animated-css": "^1.2.1",
+    "react-dom": "^16.11.0",
+    "react-input-range": "^1.3.0",
+    "react-ionicons": "^3.1.4",
+    "react-pie-menu": "^0.2.5",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0",
+    "react-slick": "^0.25.2",
+    "react-snake": "^1.0.3",
+    "react-snake-game": "^1.0.9",
+    "react-tsparticles": "^1.39.0",
+    "recompose": "^0.30.0",
+    "shx": "^0.3.4",
+    "styled-components": "^5.2.1",
+    "uifx": "^2.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+
+    "build": "react-scripts build",
+    "postbuild": "shx rm -rf ../dnst-gamemode/client_packages/cef/* && shx cp -r build/* ../dnst-gamemode/client_packages/cef",
+
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
