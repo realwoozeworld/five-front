@@ -145,103 +145,78 @@ class Authorization extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="auth-main" style={{
-                    /*backgroundImage: `url(${this.state.showAuto ? authImageBg : regImageBg})`,
-                    backgroundPositionX: 'left',
-                    backgroundPositionY: 'bottom',
-                    backgroundSize: '50%'*/
-                }}>
-                    <div className="auth__background" />
-                    <div className="content-main">
-                        <div className="auth__music" onClick={() => this.musicChangeState()}>
-                            <img src={this.state.isMusicPlay ? IconVolumeOff : IconVolumeOn } width="64" />
-                        </div>
-                        <div className="content-auth">
-                            <div className="button-main">
-                                <input type="radio" id="btn-radio-auth1" name="btn-radio-auth" defaultChecked="true"
-                                    onChange={() => this.handleChange(true)} />
-                                <label htmlFor="btn-radio-auth1" className="button-auth">Авторизация</label>
-                                <input type="radio" id="btn-radio-auth2" name="btn-radio-auth"
-                                    onChange={() => this.handleChange(false)} />
-                                <label htmlFor="btn-radio-auth2" className="button-auth">Регистрация</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2">
+                   <div>
+                        <form style={{width: "512px" , 
+                                      height: "735px" ,
+                                      background: "black" ,
+                                      padding:"10px" , 
+                                      position:"absolute" , 
+                                      borderRadius:"8px" ,
+                                      justifyContent:"center",
+                                      alignItems:"center" , 
+                                      marginLeft:"700px" ,
+                                      marginTop:"150px"
+        
+                                       }}>
+                            <img className="logo" alt="" src="/logo.svg" style={{marginLeft:"40px" , marginTop:"48px"}} />
+                            <h1 style={{height: "24px"  , 
+                                        weight: "188px" , 
+                                        color: "white" , 
+                                        fontWeight: "700" , 
+                                        fontStyle:"normal" , 
+                                        fontSize: "30px" , 
+                                        marginLeft:" 45px" , 
+                                        textTransform:"uppercase" , 
+                                        fontFamily:"Noto Sans Georgian"}}>რეგისტრაცია</h1>
+                            <h2 style={{color: "white" , 
+                                        width:"320px" ,
+                                        fontSize:"10px" , 
+                                        fontStyle:" normal" , 
+                                        fontWeight:"400" , 
+                                        marginLeft:"45px" ,
+                                        lineHeight:"normal" ,
+                                        fontFamily:"Noto Sans Georgian"}}>შეიყვანე პირადი ინფორმაცია და დაიწყე თამაში</h2>
+                            <div>
+                                <label style={{width:"fixed 400px" , margin:"auto" , color:"#8A8A8A" , height:"80px"}}><img className='user' alt='' src='/user.svg' style={{position:"absolute" , alignSelf:"flex-start" , marginLeft:"60px" , marginTop:"27px"}}></img></label>
+                                <input type="username" id="username" placeholder="ექაუნთი" style={{width: "380px", fontWeight:"bold" ,fontFamily:"Noto Sans Georgian" , outlineColor:"white" , color:"white", textAlign:"center"}}></input>
                             </div>
-                            {this.state.showAuto ?
-                                <React.Fragment>
-                                    <div className="auth-input">
-                                        <div className="auth-input__text__container">
-                                            <Title text="Добро пожаловать на State 99" size="xxl" />
-                                            <Title text="Авторизуйтесь, чтобы продолжить" size="xl-regular" />
-                                        </div>
-                                        <input type="text" pattern="[a-zA-Z0-9]*" placeholder="Введите логин"
-                                            name="login-auth" className="auth-input-style"
-                                            onChange={this.valueLogin.bind(this)}
-                                            //value={this.state.login}
-                                            defaultValue={this.state.defaultLogin}
-                                        />
-                                        <input type="password" pattern="[a-zA-Z0-9]*" placeholder="Введите пароль"
-                                            name="password-auth" className="auth-input-style"
-                                            value={this.state.password} onChange={this.valuePassword.bind(this)}
-                                        />
-                                    </div>
-                                    <Button text="Войти" onClick={this.clickLogin.bind(this)} />
-                                </React.Fragment>
-                                :
-                                <React.Fragment>
-                                    <div className="auth-input">
-                                        <div className="auth-input__text__container">
-                                            <Title text="Добро пожаловать на State 99" size="xxl" />
-                                            <Title text="Пройдите регистрацию для начала игры" size="xl-regular" />
-                                        </div>
-                                        <div className="reg-bloc">
-                                            <input type="text" pattern="[a-zA-Z0-9]*" placeholder="Придумайте логин"
-                                                name="create-login" className="reg-input-style"
-                                                value={this.state.loginReg}
-                                                onChange={this.valueLoginReg.bind(this)}
-                                            />
-                                            <input type="text" placeholder="Введите свой E-mail" name="create-email"
-                                                className="reg-input-style" onChange={this.valueMailReg.bind(this)}
-                                            />
-
-                                        </div>
-                                        <div className="reg-bloc">
-                                            <input type="password" pattern="[a-zA-Z0-9]*"
-                                                placeholder="Придумайте пароль" value={this.state.passwordReg}
-                                                name="create-password" className="reg-input-style"
-                                                onChange={this.valuePasswordReg.bind(this)}
-                                            />
-                                            <input type="password" pattern="[a-zA-Z0-9]*" placeholder="Повторите пароль"
-                                                value={this.state.passwordRegCheck} name="create-password-repeat"
-                                                className="reg-input-style"
-                                                onChange={this.valuePasswordRegCheck.bind(this)}
-                                            />
-                                        </div>
-                                        <div className="reg-checkbox">
-                                            <input type="checkbox" name="chek1" id="chk1" className="chk-reg-inpt"
-                                                defaultChecked={this.state.acceptRules} onChange={this.acceptRules}
-                                            />
-                                            <label className="chk_reg" htmlFor="chk1">
-                                                <div className="chk-circle"></div>
-                                                <p id="button_rules" onClick={this.clickCheckRules.bind(this)}>Согласен с правилами проекта и принимаю условия</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <Button text="Готово" onClick={this.clickReg.bind(this)} />
-                                </React.Fragment>
-                            }
-                        </div>
+                            <div>
+                                <label style={{width:"fixed 400px" , margin:"auto" , color:"#8A8A8A" , height:"80px"}}><img className='sms' alt='' src='/sms.svg' style={{position:"absolute" , alignSelf:"flex-start" , marginLeft:"60px" , marginTop:"27px" }}></img></label>
+                                <input type="email" id="email" placeholder="ელ.ფოსტა" style={{width: "380px", fontWeight:"bold" , fontFamily:"Noto Sans Georgian" , outlineColor:"white" , color:"white" ,textAlign:"center"}}></input>
+                            </div>
+                            <div>
+                                <label style={{width:"fixed 400px" , margin:"auto" , color:"#8A8A8A" , height:"80px"}}><img className='lock' alt='' src='/lock.svg' style={{position:"absolute" , alignSelf:"flex-start" , marginLeft:"60px" , marginTop:"24px"}}></img></label>
+                                <input type="password" id="password" placeholder="პაროლი" style={{width: "380px", fontWeight:"bold" , fontFamily:"Noto Sans Georgian" , outlineColor:"white" , color:"white" , textAlign:"center"}}></input>
+                            </div>
+                            <div>
+                                <label style={{width:"fixed 400px" , margin:"auto" , color:"#8A8A8A" , height:"80px"}}><img className='lock' alt='' src='/lock.svg' style={{position:"absolute" , alignSelf:"flex-start" , marginLeft:"60px" , marginTop:"25px"}}></img></label>
+                                <input type="password" id="password" placeholder="გაიმეორე პაროლი" style={{width: "380px", fontWeight:"bold" ,fontFamily:"Noto Sans Georgian" , outlineColor:"white" , color:"white" , textAlign:"center"}}></input>
+                            </div>
+                            <div className='authorization'>
+                                <button style={{height:"80px" , 
+                                                width:"430px" , 
+                                                padding:"24px" , 
+                                                justifyContent:"center" , 
+                                                margin:"auto" , 
+                                                fontWeight:"510" , 
+                                                fontSize:" 16px" , 
+                                                fontFamily:"Noto Sans Georgian"}}>რეგისტრაცია<img className="image" src="/vuesaxlinearlogin.svg" alt=''/></button>
+                                <p style={{color:"white" , 
+                                           width:"360px" , 
+                                           height:"22px" , 
+                                           justifyContent:"fixed" , 
+                                           marginLeft:"70px" , 
+                                           fontSize:"16px" , 
+                                           position:"absolute" , 
+                                           fontFamily:"Noto Sans Georgian" , 
+                                           fontWeight:"400"}}>თქვენ უკვე ხართ რეგისტრირებული? <a href="login/src/components/Login.jsx" style={{color:"#DBFF00" , border:"24px" , fontSize:"16px" , position:"flex" , fontFamily:"Noto Sans Georgian" }}>Login</a></p>
+                            </div>    
+                        </form>
                     </div>
-                    {this.state.modalrules ?
-                        <div className="iframe_rules">
-                            <div id="rules">
-                                <div className="close-rules"><div className="close-img-rules" onClick={this.closeRules.bind(this)}></div></div>
-                                <iframe src="https://state-99.com/rules#container" sandbox></iframe>
-
-                            </div>
-                        </div> : ''}
                 </div>
             </React.Fragment>
-        )
+        )   
     }
-}
 
 export default Authorization;
