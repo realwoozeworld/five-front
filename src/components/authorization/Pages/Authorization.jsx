@@ -7,6 +7,7 @@ import regImageBg from '../img/reg.png'
 import IconVolumeOn from '../img/volume_on.svg'
 import IconVolumeOff from '../img/volume_off.svg'
 import music from '../img/music.mp3'
+import '../authorization.css'
 
 class Authorization extends React.Component {
     constructor(props) {
