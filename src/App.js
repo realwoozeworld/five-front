@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import './css/base.css'
 import './css/adaptive.css'
@@ -27,7 +28,6 @@ import Tatoo from './components/hudmenus/tatoo/Tatoo';
 import GovMenu from './components/govmenu/GovMenu';
 import Bank from './components/bank/Bank'
 import CircularMenu from './components/radialmenu/PrefenceSelector.component';
-import Login from '.components/authorization/Login';
 
 
 function App() {
