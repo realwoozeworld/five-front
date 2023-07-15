@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
 import Noty from 'noty';
 import './css/theme-noty.css';
 import "../node_modules/noty/lib/noty.css";

@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import './css/auto.css'
-import Authorization from './Pages/Authorization';
+import Authorization from './Pages/Content/Authorization';
 import {HashRouter as Router, Route, Redirect} from "react-router-dom";
 import CreatePlayer from './Pages/CreatePlayer';
 import EventManager from "../../EventManager";
 import serverLogo from './img/logo.svg'
-import Login from '../Content/Login.jsx';
+import Login from './Pages/Content/Login.jsx';
 
 class AuthMain extends React.Component {
     constructor(props) {
@@ -46,8 +47,9 @@ class AuthMain extends React.Component {
             <React.Fragment>
                 <Router>
                     <img src={serverLogo} style={{zIndex: 2, position: 'absolute', marginTop: '2rem', marginLeft: '2rem'}} />
-                    <Route exact path="/" component={Authorization}/>
                     <Route exact path="/create" component={CreatePlayer}/>
+                    <Route exact path="/Login" component={Login} />
+                    <Route exact path="/Authorization" component={Authorization} />
                     <Redirect to={this.state.path} push/>
                 </Router>
             </React.Fragment>
