@@ -6,7 +6,7 @@ import {HashRouter as Router, Route, Redirect} from "react-router-dom";
 import CreatePlayer from './Pages/CreatePlayer';
 import EventManager from "../../EventManager";
 import serverLogo from './img/logo.svg'
-import Login from './Pages/Content/Login.jsx';
+import Login from './Login.jsx';
 
 class AuthMain extends React.Component {
     constructor(props) {
@@ -48,8 +48,8 @@ class AuthMain extends React.Component {
                 <Router>
                     <img src={serverLogo} style={{zIndex: 2, position: 'absolute', marginTop: '2rem', marginLeft: '2rem'}} />
                     <Route exact path="/create" component={CreatePlayer}/>
-                    <Route exact path="/Login" component={Login} />
-                    <Route exact path="/Authorization" component={Authorization} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/authorization" component={Authorization} />
                     <Redirect to={this.state.path} push/>
                 </Router>
             </React.Fragment>

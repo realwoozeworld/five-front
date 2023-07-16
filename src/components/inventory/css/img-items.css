@@ -1,4 +1,8 @@
-/*FOOD*/
+
+
+
+/*FOOD
+
 .img-burger {
     background: url(../img/food/burger.png) no-repeat;
     width: 41px;
@@ -12,9 +16,9 @@
     background-size: 39px;
     background-position: center;
     filter: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(7500%) hue-rotate(230deg) brightness(107%) contrast(100%);
-}
+}*/
 
-/*OUTFITS*/
+/*OUTFITS
 .img-cap {
     background: url(../img/outfit/cap.png) no-repeat;
     width: 41px;
@@ -149,8 +153,8 @@
     background-position: center;
     filter: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(7500%) hue-rotate(230deg) brightness(107%) contrast(100%);
 }
-
-/*WEAPON*/
+*/
+/*WEAPON
 .img-279 {
     background: url(../img/weapon/img-weapon.png) no-repeat;
     width: 41px;
@@ -168,8 +172,8 @@
     background-position: center;
     filter: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(7500%) hue-rotate(230deg) brightness(107%) contrast(100%);
 }
-
-/*DRUGS*/
+*/
+/*DRUGS
 .img-cocaine {
     background: url(../img/items/drugs.png) no-repeat;
     width: 41px;
@@ -1784,6 +1788,7 @@
 .img-536 {
     background: url("../img/all-items/Item_487-536.png") no-repeat;
 }
+*/
 
 .icon-item {
     width: 24px;
@@ -1791,5 +1796,5 @@
     background-size: 24px;
     background-position: center;
     background-size: contain;
-    /*filter: invert(0%) sepia(100%) saturate(325%) hue-rotate(185deg) brightness(300%) contrast(100%);*/
+    filter: invert(0%) sepia(100%) saturate(325%) hue-rotate(185deg) brightness(300%) contrast(100%);
 }
